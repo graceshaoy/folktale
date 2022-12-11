@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>data_exploration</title>
+<title>Cultural Stories and Values</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,69 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -109,49 +46,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Cultural Stories and Values</h1>
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
 
 <section id="github-link" class="level1">
 <h1><a href="https://github.com/graceshaoy/folktales">GitHub link</a></h1>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> spearmanr, pearsonr</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">80</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> regex <span class="im">as</span> re</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> gensim</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim.models <span class="im">import</span> Word2Vec</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gensim <span class="im">import</span> corpora, models</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># from transformers import pipeline</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># nltk.download('stopwords')</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> TSNE</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># from transformers import BertModel</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># from transformers import AutoTokenizer</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># from transformers import pipeline</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>warnings.simplefilter(<span class="st">'ignore'</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>save_progress <span class="op">=</span> <span class="st">"save_progress/"</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="st">"data/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> importlib</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> utils</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>importlib.<span class="bu">reload</span>(utils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>&lt;module 'utils' from 'C:\\Users\\grace\\Desktop\\macs_404_patterns\\folktale\\utils.py'&gt;</code></pre>
 </div>
@@ -161,11 +75,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Introduction</h1>
 <p>Although most knowledge is communicated and stored in writing today, the oral tradition takes precedent with it’s longer history and wider reach. Storytelling is a fundamental mode of communication: they’re easy to remember and understand. Parents teach values to kids through storytelling. The classic tale of the knight saving a princess from the dragon exemplifies bravery as a desireable trait. The stories we tell our kids can reflect what we value. <br> <br> On a larger scale, stories passed down generationally reflect the values of a society. Here, I explore the relationship between a culture’s stories and its values. <br> For data on stories, I use folktale data scraped by Andrzej Panczenko (avaliable <a href="https://www.kaggle.com/datasets/andrzejpanczenko/folk-tales-dataset">here</a>, accessed October 2022), which contains 2,838 folktales from 57 nations. The drawbacks of using a dataset for folktales should be noted: English translations are used for other languages; stories are told and retold, but are only recorded once here; the popularity/importance of each story is not considered; and the stories that are included might be of different types (are English folktales about Jack and Jill comparable to Chinese epics retold for children, like the Monkey King?)<br> For data on cultural values, I use Hofstede’s six cultural dimensions: power distance index, individualism, masculinity, uncertainty avoidance index, and long-term orientation. I downloaded the data <a href="https://www.kaggle.com/code/tarukofusuki/hofstede-s-cultural-dimensions-notebook/data">here</a>. A future study might consider using laws to analyze cultural values. However, because of colonization and Western influence, current laws might not be an accurate representation of cultural values. *? need more words!</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>stories <span class="op">=</span> pd.read_csv(save_progress<span class="op">+</span><span class="st">'stories.csv'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nation_sid <span class="op">=</span> {}</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nation <span class="kw">in</span> stories.nation.unique():</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    nation_sid[nation] <span class="op">=</span> <span class="bu">list</span>(stories.query(<span class="st">'nation == @nation'</span>)[<span class="st">'sid'</span>])</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>stories.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 
 <div>
@@ -252,8 +161,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>hofstede <span class="op">=</span> pd.read_excel(data<span class="op">+</span><span class="st">"hofstede.xlsx"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>hofstede.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 
 <div>
@@ -355,27 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="existence-of-a-pattern">Existence of a Pattern</h2>
 <p>Using the Peircean understanding of a sign, the sign-vehicle here are the stories and the object and interpretant are the cultural values. <br> <br> With the example of the knight in shining armor, the story of the knight is the sign-vehicle. If a parent asks a child to remember the story when the child is facing a difficulty, the object is bravery, because that is what the parent is trying to communicate. The object and sign-vehicle relate iconically, since the knight resembles bravery. <br> The child might most immediately see the knight as “cool”, so that is the immediate interpretant. The knight and coolness relate dicentically; the statement “The knight is cool” is a proposition. Another proposition is “The knight is brave”. Thus, the child makes the argument that he should be like the knight, and be brave, since the knight is cool. <br> <br> At a larger level, these stories are legisigns: most knights are brave. In this way, the knight becomes a convention of bravery. Other cultures might have other conventions of bravery, such as dragons. Where Western culture tells stories about scary dragon, East Asian cultures might tell stories about royal dragons. At the international level, we can see how cultures that tell stories about bravery more often likely value bravery.</p>
 <p>To see if this pattern truly exists, let’s look at a general map of the stories. Each story is turned into a datapoint using t-SNE and doc2vec. Because the dataset I’m using tags folktales with their “nation”, this is what I use to differentiate between cultures. I define culture here as the stories and values of these nations.</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tsne <span class="op">=</span> pd.read_csv(save_progress<span class="op">+</span><span class="st">"tsne.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>big_families <span class="op">=</span> [<span class="st">'Germanic'</span>,<span class="st">'Slavic'</span>,<span class="st">'Italic'</span>,<span class="st">'Austronesian'</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tsne_bigfamilies <span class="op">=</span> pd.DataFrame()</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fam <span class="kw">in</span> big_families:</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    tsne_bigfamilies <span class="op">=</span> pd.concat([tsne_bigfamilies,tsne.query(<span class="ss">f'language_family == "</span><span class="sc">{</span>fam<span class="sc">}</span><span class="ss">"'</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-scrolled="true" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tsne.language_family.unique()</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>nosmall_families <span class="op">=</span> [<span class="st">'slavic'</span>,<span class="st">'germanic'</span>,<span class="st">'celtic'</span>,<span class="st">'italic'</span>,<span class="st">'east_asia'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(tsne_bigfamilies).mark_point(filled<span class="op">=</span><span class="va">True</span>, opacity<span class="op">=</span><span class="fl">0.5</span>).encode(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'X1'</span>,scale<span class="op">=</span>alt.Scale(zero<span class="op">=</span><span class="va">False</span>)),</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'X2'</span>,scale<span class="op">=</span>alt.Scale(zero<span class="op">=</span><span class="va">False</span>)),</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span>alt.Color(<span class="st">'Nation'</span>,legend<span class="op">=</span><span class="va">None</span>),</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    facet<span class="op">=</span>alt.Facet(<span class="st">'language_family:N'</span>,columns<span class="op">=</span><span class="dv">2</span>,header<span class="op">=</span>alt.Header(labelFontSize<span class="op">=</span><span class="dv">20</span>)),</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    tooltip <span class="op">=</span> [alt.Tooltip(<span class="st">'Nation'</span>)]</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">300</span>,height<span class="op">=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 
 <div id="altair-viz-fa2f9e16493944e88f7a3801515836bb"></div>
@@ -436,12 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p><em>Scatterplots of Stories.</em><br> In this scatterplot, we have the four language families with the most nations in the dataset, with their nations separated by color. Within the Austronesian group, the Austrailian Ethnic and New Zealand stories are tightly clustered. Within the Germanic group, the Nordic and German stories are tightly clustered. There seems to be two clusters of the Nordic stories, suggesting either a further cultural subdivision not in the dataset, or a subdivision of popular story types. Within the Italic group, the French have two clusters. The Slavic group has no clear clustering.<br> <br> Here, we already see clusters of stories, suggesting that there’s an underlying pattern to the stories these cultures tell.<br></p>
 <p>Let’s look at specific cultures and words.</p>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>nouns_bynation <span class="op">=</span> pd.read_csv(save_progress<span class="op">+</span><span class="st">"nouns_bynation.csv"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>nouns_bylangfam <span class="op">=</span> pd.read_csv(save_progress<span class="op">+</span><span class="st">"nouns_bylangfam.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>nouns_bynation.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>Index(['lemma', 'japanese', 'serbian', 'german', 'french',
        'north_american_native', 'brazilian', 'armenian', 'english', 'russian',
@@ -458,14 +340,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>utils.compare_ab(nouns_bynation,<span class="st">'chinese'</span>,<span class="st">'greek'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="data_exploration_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p><em>Chinese vs.&nbsp;Greek words.</em><br> In this bar chart, we have the words with the most difference frequency of usage compared between Chinese and Greek culture. Chinese stories are more often about emperors, heaven, dragon, and spirits; while Greek cultures are more often about kings, Theseus, heros, maidens, and fairies.</p>
 <div class="cell" data-execution_count="573">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>utils.compare_ab(nouns_bynation,<span class="st">'slavic'</span>,<span class="st">'nordic'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="data_exploration_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
 </div>
@@ -478,36 +358,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="comparison-of-hofstedes-dimensions-and-word-categories" class="level1">
 <h1>Comparison of Hofstede’s Dimensions and Word Categories</h1>
 <p>To interpret this pattern of the relationship between cultural stories and values, I use LIWC word categories and Hofstede’s cultural dimension to measure story topics and cultural values. <br> <br> Geert Hofstede’s six cultural dimenions are power distance, individualism, masculinity, uncertainty avoidance, long-term orientation, and indulgence. Power distance is the amount people in lower positions of power accept the unequal distribution of power. Individualism is how independent people are, where collectivism is how interdependent communities are. Masculinity is assertiveness, while feminity is caring. Uncertainty avoidance is the intolerance of ambiguity and the unknown. Long-term orientation is the understanding that the world changes, and preperation for the future is good; while short-term orientation is the understanding that the world is today as it was before, so the tradition is good. Indulgence is the access to desires and fun, while restraint is the control of gratification through social norms. Hofstede developed his theory after gaining access to data from a questionnare administered to employees of international programs, where he found differences at the national level. (Hofstede 2007) <br> <br> Beth Morling and Markila Lamoreaux demonstrate a relationship between cultural products (such as advertisements or popular texts) and individualistic and collectivistic psyches as defined by Hofstede (Morling &amp; Lamoreaux 2008). They focused on individualism and collectivism because it is most commonly operationalized, is a central cultural syndrome, and can be compared to self-reported measures.<br> <br> Nathan DeWall et al.&nbsp;argue that cultural products can also be used to analyze psyce within cultures. They use the LIWC program to analyze the song lyrics on three levels: self-focused, using first-person pronouns; socially-disconnected, using words such as talking or sharing; and angry/anti-social, using words such as hate or swear words. Based on their linguistic analysis, they concluded that music in the US, and thus the psyche has become more self-focused, socially-disconnected, and angry over time (DeWall et al.&nbsp;2011). While their results are likely the result of change in genre popularity more than psyche, their method is useful to follow in my case. Since folktales are passed down generationally and are long traditions, there would be no confounding factor such as a change in popularity of story genre. Additionally, I am comparing across nations, rather than within a nation, so such a change still reflects cultural values, my object of study. Thus, I use the LIWC dictionary (Pennebaker et al.&nbsp;2007) for my analysis. <br> <!-- In addition to the words and categories in the dictionary, I added a few of my own categories and relevant words, specifically the categories "hero", "royalty", and "power". --> <br> I predict that storytelling is related to cultural values because it is a strong teaching tool. Michael Tomasello argues in “The Human Adaptation for Culture” that children cognitively represent the world in uniquely powerful ways. In arguing this, he follows the ontogeny of human cultural learning, of which joint attention and imitative learning are most relevant for us. Join attention is the understanding of the relationship between child, adult, and another entity. An example of a baby of using their join attentional understanding is pointing to a toy to direct the adults attention. This is only possible when they understand other people as intentional agents, who have goals and make active choices to attain goals. After join attention, infants develop the skill of imitative learning. For example, infants were able to learn what a “toma” was after an adult announced her intention to “find the toma”, and smiling after it had been found (Tomasello 1999). In relation to stories, children understand characters as intentional agents, who have goals and strategies to achieve goals. Using imitative learning, children can learn those same goals and strategies, such as how to be a good person. <br> <br> JL Fischer analyzes why folktales are a model for society. Rewards and punishments for the supporters/dissenters of society are supplied in audience reaction and events in the folktales. For example, a good hero that suffers a bad fate has its reward in the audience’s sympathy rather than the hero’s fate, while funny tales where conventions are broken has its punishment in the scorn of the audience. Within tales themselves, dissenters may be punished or heroes rewarded. He then asks whether there is a relationship between folktales and social reality: and he concludes that promiment themes of folktales within a group are often subjects of conflicts (such as the height of chiefs and the smallness of artisans), while not all conflicts are represented in folktales. Additionally, they often overexaggerate (Fischer 1963). Thus, I am validated that the topics of stories should reflect what matters to a society (although maybe not directly!).<br> <br> Additionally, it might be better that stories don’t accurately reflect society. Jack Zipes argues that our fondness for folktales across all social classes are because they contain what we lack: “In many ways, fairy tales, with their metaphorical allusions, are more truthful than so-called realistic stories because the tales are generally endowed with a sense of social justice that we do not find in our societies.” The morals in stories result from the combination of lower-class storytellers and uppper-class storytellers and writers (Zipes 2019).<br> <br> It has also been argued that the relationship between law and morality makes folktales relevant to legal theory. Alexander Shytov argues that most law is negative, defining what is not allowed, resulting in the divide between laws from morals, because laws have become a mechanism of external coercion rather than a tool of self-governance. Because folktales contain standards of what is right and wrong, it contains the spirit of law, since they represent the moral standards of the whole community, who is the author of these stories (Shytov 2008). <br> <br> Therefore, folktales are widely agreed to hold the morals of society, and the words in those folktales should correlate to the values of society.</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>nation_liwc <span class="op">=</span> pd.read_csv(save_progress<span class="op">+</span><span class="st">'nation_liwc.csv'</span>,index_col<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>hofstede_cols <span class="op">=</span> [<span class="st">'pdi'</span>,<span class="st">'idv'</span>,<span class="st">'mas'</span>,<span class="st">'uai'</span>,<span class="st">'ltowvs'</span>,<span class="st">'ivr'</span>]</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>hofstede_dict <span class="op">=</span> {<span class="st">'pdi'</span>:<span class="st">'Power Distance'</span>,<span class="st">'idv'</span>:<span class="st">'Individualism'</span>,<span class="st">'mas'</span>:<span class="st">'Masculinity'</span>,<span class="st">'uai'</span>:<span class="st">'Uncertainty Avoidance'</span>,<span class="st">'ltowvs'</span>:<span class="st">'Long Term Orientation'</span>,<span class="st">'ivr'</span>:<span class="st">'Indulgence'</span>}</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>liwc_cols <span class="op">=</span> nation_liwc.columns[<span class="dv">8</span>:] <span class="co">#http://www.liwc.net/LIWC2007LanguageManual.pdf</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>nation_liwc <span class="op">=</span> nation_liwc.rename(columns<span class="op">=</span>{<span class="st">'nation'</span>:<span class="st">'Culture'</span>})</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>nation_liwc[<span class="st">'Culture'</span>] <span class="op">=</span> nation_liwc[<span class="st">'Culture'</span>].<span class="bu">str</span>.title()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>corr, plot <span class="op">=</span> utils.compare_liwc_hofstede(<span class="st">'pdi'</span>,[<span class="st">'family'</span>,<span class="st">'social'</span>],nation_liwc)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Feature  Correlation   P-Value
-4       you     0.499466  0.007990
-2         i     0.477484  0.011780
-22   family     0.440543  0.021456
-21   social     0.417036  0.030453
-1     ppron     0.410319  0.033518
-51    space    -0.435353  0.023227
-31  cogmech    -0.467410  0.013961</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="15">
 
-<div id="altair-viz-52889f72a2e948acb47088b54783857d"></div>
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Feature</th>
+      <th>Correlation</th>
+      <th>P-Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>you</td>
+      <td>0.499466</td>
+      <td>0.007990</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>i</td>
+      <td>0.477484</td>
+      <td>0.011780</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>family</td>
+      <td>0.440543</td>
+      <td>0.021456</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>social</td>
+      <td>0.417036</td>
+      <td>0.030453</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ppron</td>
+      <td>0.410319</td>
+      <td>0.033518</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>space</td>
+      <td>-0.435353</td>
+      <td>0.023227</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>cogmech</td>
+      <td>-0.467410</td>
+      <td>0.013961</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="16">
+
+<div id="altair-viz-ad966f9c47ce453f8de90525ebe433b0"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-52889f72a2e948acb47088b54783857d") {
-      outputDiv = document.getElementById("altair-viz-52889f72a2e948acb47088b54783857d");
+    if (outputDiv.id !== "altair-viz-ad966f9c47ce453f8de90525ebe433b0") {
+      outputDiv = document.getElementById("altair-viz-ad966f9c47ce453f8de90525ebe433b0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -558,31 +480,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p><em>Power Distance vs.&nbsp;LIWC.</em> In this scatterplot, we have the Power Distance Index on the x-axis, and the standardized score of LIWC word categories on the y-axis, with the averages graphed with lines. Power distance is positively correlated to family and social words.</p>
-<div class="cell" data-execution_count="637">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>corr, plot <span class="op">=</span> utils.compare_liwc_hofstede(<span class="st">'idv'</span>,[<span class="st">'family'</span>,<span class="st">'social'</span>],nation_liwc)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corr)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Feature  Correlation   P-Value
-31  cogmech     0.471794  0.012974
-62   filler     0.448556  0.018939
-43     feel     0.423789  0.027604
-51    space     0.406666  0.035286
-55  leisure     0.391378  0.043511
-1     ppron    -0.400857  0.038251
-22   family    -0.409418  0.033947
-4       you    -0.422566  0.028103
-21   social    -0.432962  0.024082</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="637">
+<div class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="17">
 
-<div id="altair-viz-5ff637a089774b879faf457aaa8b74b4"></div>
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Feature</th>
+      <th>Correlation</th>
+      <th>P-Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>31</th>
+      <td>cogmech</td>
+      <td>0.471794</td>
+      <td>0.012974</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>filler</td>
+      <td>0.448556</td>
+      <td>0.018939</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>feel</td>
+      <td>0.423789</td>
+      <td>0.027604</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>space</td>
+      <td>0.406666</td>
+      <td>0.035286</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>leisure</td>
+      <td>0.391378</td>
+      <td>0.043511</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ppron</td>
+      <td>-0.400857</td>
+      <td>0.038251</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>family</td>
+      <td>-0.409418</td>
+      <td>0.033947</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>you</td>
+      <td>-0.422566</td>
+      <td>0.028103</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>social</td>
+      <td>-0.432962</td>
+      <td>0.024082</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="18">
+
+<div id="altair-viz-fd84b695c19042a2b2dcef5d75d61844"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5ff637a089774b879faf457aaa8b74b4") {
-      outputDiv = document.getElementById("altair-viz-5ff637a089774b879faf457aaa8b74b4");
+    if (outputDiv.id !== "altair-viz-fd84b695c19042a2b2dcef5d75d61844") {
+      outputDiv = document.getElementById("altair-viz-fd84b695c19042a2b2dcef5d75d61844");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -632,26 +613,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 </div>
 </div>
-<p>Individualism vs.&nbsp;LIWC. Individualism is negatively correlated to family and social categories. Nations that have a more collective mindset (lower individualism score) use more family and social words, while nations that have a more individualistic mindset huse less family and social words.</p>
-<div class="cell" data-execution_count="639">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>corr, plot <span class="op">=</span> utils.compare_liwc_hofstede(<span class="st">'uai'</span>,[<span class="st">'discrep'</span>,<span class="st">'auxverb'</span>],nation_liwc)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corr)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Feature  Correlation   P-Value
-10  auxverb    -0.422290  0.028217
-14   adverb    -0.465038  0.014520
-34  discrep    -0.542290  0.003476</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="639">
+<p><em>Individualism vs.&nbsp;LIWC.</em><br> Individualism is negatively correlated to family and social categories. Nations that have a more collective mindset (lower individualism score) use more family and social words, while nations that have a more individualistic mindset huse less family and social words.</p>
+<div class="cell" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="19">
 
-<div id="altair-viz-fddea4ec04044a1eb32098af8a34d184"></div>
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Feature</th>
+      <th>Correlation</th>
+      <th>P-Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10</th>
+      <td>auxverb</td>
+      <td>-0.422290</td>
+      <td>0.028217</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>adverb</td>
+      <td>-0.465038</td>
+      <td>0.014520</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>discrep</td>
+      <td>-0.542290</td>
+      <td>0.003476</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="20">
+
+<div id="altair-viz-dadf04a1497745b9b64ad745972a0f1a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-fddea4ec04044a1eb32098af8a34d184") {
-      outputDiv = document.getElementById("altair-viz-fddea4ec04044a1eb32098af8a34d184");
+    if (outputDiv.id !== "altair-viz-dadf04a1497745b9b64ad745972a0f1a") {
+      outputDiv = document.getElementById("altair-viz-dadf04a1497745b9b64ad745972a0f1a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -701,29 +711,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 </div>
 </div>
-<p>Uncertainty Avoidance vs.&nbsp;LIWC. Nations that have are less avoidant of uncertainty use more auxverbs (eg. am, will, have) and discrep words (eg. should, would, could). Since nations with a higher uncertainty avoidance are more stressed about unknown futures, this is not what I expected.</p>
-<div class="cell" data-execution_count="625">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>corr, plot <span class="op">=</span> utils.compare_liwc_hofstede(<span class="st">'mas'</span>,[<span class="st">'sexual'</span>,<span class="st">'health'</span>],nation_liwc)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corr)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Feature  Correlation   P-Value
-47   sexual     0.419301  0.029472
-46   health     0.416247  0.030801
-11     past    -0.387540  0.045797
-31  cogmech    -0.419911  0.029212
-39     excl    -0.423576  0.027690
-14   adverb    -0.562529  0.002256</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="625">
+<p><em>Uncertainty Avoidance vs.&nbsp;LIWC.</em><br> Nations that have are less avoidant of uncertainty use more auxverbs (eg. am, will, have) and discrep words (eg. should, would, could). Since nations with a higher uncertainty avoidance are more stressed about unknown futures, this is not what I expected.</p>
+<div class="cell" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="21">
 
-<div id="altair-viz-7c5375a9aa6c47bdb2fbccda35298789"></div>
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Feature</th>
+      <th>Correlation</th>
+      <th>P-Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>47</th>
+      <td>sexual</td>
+      <td>0.419301</td>
+      <td>0.029472</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>health</td>
+      <td>0.416247</td>
+      <td>0.030801</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>past</td>
+      <td>-0.387540</td>
+      <td>0.045797</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>cogmech</td>
+      <td>-0.419911</td>
+      <td>0.029212</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>excl</td>
+      <td>-0.423576</td>
+      <td>0.027690</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>adverb</td>
+      <td>-0.562529</td>
+      <td>0.002256</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="22">
+
+<div id="altair-viz-1661e391824647b28573fb34f3ca0d57"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7c5375a9aa6c47bdb2fbccda35298789") {
-      outputDiv = document.getElementById("altair-viz-7c5375a9aa6c47bdb2fbccda35298789");
+    if (outputDiv.id !== "altair-viz-1661e391824647b28573fb34f3ca0d57") {
+      outputDiv = document.getElementById("altair-viz-1661e391824647b28573fb34f3ca0d57");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -773,26 +827,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 </div>
 </div>
-<p>Masculinity vs.&nbsp;LIWC. There is a positive correlation between masculinity (assertiveness) and words related to health (eg. clinic, flu, pill) and sexual (eg. horny, love, incest).</p>
-<div class="cell" data-execution_count="626">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>corr, plot <span class="op">=</span> utils.compare_liwc_hofstede(<span class="st">'ltowvs'</span>,[<span class="st">'discrep'</span>],nation_liwc)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corr)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Feature  Correlation   P-Value
-7     ipron    -0.401709  0.037803
-34  discrep    -0.409035  0.034131
-27   negemo    -0.445665  0.019818</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="626">
+<p><em>Masculinity vs.&nbsp;LIWC.</em><br> There is a positive correlation between masculinity (assertiveness) and words related to health (eg. clinic, flu, pill) and sexual (eg. horny, love, incest).</p>
+<div class="cell" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="23">
 
-<div id="altair-viz-2c8ebff0d1634fbf856078a3a6ce93c2"></div>
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Feature</th>
+      <th>Correlation</th>
+      <th>P-Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>ipron</td>
+      <td>-0.401709</td>
+      <td>0.037803</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>discrep</td>
+      <td>-0.409035</td>
+      <td>0.034131</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>negemo</td>
+      <td>-0.445665</td>
+      <td>0.019818</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="24">
+
+<div id="altair-viz-eb31ed44e5e045258ffbbce00de0134a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2c8ebff0d1634fbf856078a3a6ce93c2") {
-      outputDiv = document.getElementById("altair-viz-2c8ebff0d1634fbf856078a3a6ce93c2");
+    if (outputDiv.id !== "altair-viz-eb31ed44e5e045258ffbbce00de0134a") {
+      outputDiv = document.getElementById("altair-viz-eb31ed44e5e045258ffbbce00de0134a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -842,33 +925,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 </div>
 </div>
-<p>Long Term Orientation vs.&nbsp;LIWC. There is a negative correlation between a long term orientation and the use of discrep words (eg. should, would, could).</p>
-<div class="cell" data-execution_count="640">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>corr, plot <span class="op">=</span> utils.compare_liwc_hofstede(<span class="st">'ivr'</span>,[<span class="st">'home'</span>,<span class="st">'family'</span>],nation_liwc)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corr)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Feature  Correlation   P-Value
-51    space     0.471756  0.012982
-56     home     0.432977  0.024077
-18    quant     0.403359  0.036950
-60   assent     0.397252  0.040188
-0   pronoun    -0.429008  0.025553
-50   motion    -0.502595  0.007545
-4       you    -0.512061  0.006324
-21   social    -0.528550  0.004594
-22   family    -0.535878  0.003965
-1     ppron    -0.574657  0.001718</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="640">
+<p><em>Long Term Orientation vs.&nbsp;LIWC.</em><br> There is a negative correlation between a long term orientation and the use of discrep words (eg. should, would, could).</p>
+<div class="cell" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="25">
 
-<div id="altair-viz-cc87bc565abc431eadc3bf950a92e8f4"></div>
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Feature</th>
+      <th>Correlation</th>
+      <th>P-Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>51</th>
+      <td>space</td>
+      <td>0.471756</td>
+      <td>0.012982</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>home</td>
+      <td>0.432977</td>
+      <td>0.024077</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>quant</td>
+      <td>0.403359</td>
+      <td>0.036950</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>assent</td>
+      <td>0.397252</td>
+      <td>0.040188</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>pronoun</td>
+      <td>-0.429008</td>
+      <td>0.025553</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>motion</td>
+      <td>-0.502595</td>
+      <td>0.007545</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>you</td>
+      <td>-0.512061</td>
+      <td>0.006324</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>social</td>
+      <td>-0.528550</td>
+      <td>0.004594</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>family</td>
+      <td>-0.535878</td>
+      <td>0.003965</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ppron</td>
+      <td>-0.574657</td>
+      <td>0.001718</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="26">
+
+<div id="altair-viz-11326ebdce524ec19140087b2f349357"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-cc87bc565abc431eadc3bf950a92e8f4") {
-      outputDiv = document.getElementById("altair-viz-cc87bc565abc431eadc3bf950a92e8f4");
+    if (outputDiv.id !== "altair-viz-11326ebdce524ec19140087b2f349357") {
+      outputDiv = document.getElementById("altair-viz-11326ebdce524ec19140087b2f349357");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -918,7 +1065,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 </div>
 </div>
-<p>Indulgence vs.&nbsp;LIWC. There is a negative correlation between indulgence and home words, and a positive correlation between indulgence and family words.</p>
+<p><em>Indulgence vs.&nbsp;LIWC.</em> There is a negative correlation between indulgence and home words, and a positive correlation between indulgence and family words.</p>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
