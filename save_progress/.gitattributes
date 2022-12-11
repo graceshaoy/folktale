@@ -1,0 +1,3 @@
+stories.csv filter=lfs diff=lfs merge=lfs -text
+stories_lemmafreq.csv filter=lfs diff=lfs merge=lfs -text
+stories_lemmacount.csv filter=lfs diff=lfs merge=lfs -text
